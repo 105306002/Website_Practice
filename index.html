@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--會觸發所有瀏覽器使用標準模式（甚至包含 Internet Explorer 6）-->
+<html>
+  <head>
+    <!--viewport的作用是告訴瀏覽器，目前裝置有多寬(或多高)，以便在縮放時有個基準。尤其當設定頁面寬度需自動調整時，如寬度100%或螢幕由垂直轉為水平，viewport大小是一個根據。-->
+
+    <!--根據W3C草案，在meta tag中viewport有以下屬性可設定
+
+      width:[數字] 或 device-width
+      height:[數字] 或 device-height
+      initial-scale:最小0.25，最大5
+      minimum-scale:最小0.25，最大5
+      maximum-scale:最小0.25，最大5
+      user-scalable:1 或 0 (yes 或 no)-->
+
+      <!--width通常設為device-width，用意是適應各家裝置的大小，這樣寫CSS時就能放心的把版面寬度設為100%(雖然還有一個box model的問題，容後再述)。-->
+
+      <!--當div的width設定為300px寬時，若再加上padding： 25px , 則總共寬度就會變成350px因為左右都各加了25px-->
+      <!--padding是指自己的周圍往外擴散出去，margin則是自己和別人的距離有多遠-->
+      <!--因此若想維持寬度還是一樣300px , 但又需要加上padding，可以用box-sizing來維持原來的寬度，以下為範例-->
+      <!--div.ex2 {
+            width: 300px;
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: lightblue;
+                  }   https://www.w3schools.com/css/tryit.asp?filename=trycss_padding_width2-->
+
+    <!--Important: When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add padding, borders and margins ，就是當在算div的總寬度時要把原本的寬度加上padding , border的寬度才會是div的總寬度，當我希望div的總寬度是320px,但padding10px,border 5px 這樣加起來會是350px-->
+
+    <!--outline-offset是outline的編框與outliner的距離 是透明的-->
+
+    <!-- with the em size, it is possible to adjust the text size in all browsers.em設定的大小能適用在任何瀏覽器、除了ＩE9會有問題外，會比設定px來得更適合在任何瀏覽器-->
+
+    <!--要用icon的話，要在head的地方加入To use the Font Awesome icons, add the following line inside the <head> section of your HTML page:
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>TS堤偲園</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!--每個 <link> 標籤都必須寫在 head 區域內，否則會造成瀏覽器無法判讀的情況-->
+    <!--「rel="stylesheet" type="text/css"」所代表的意思，就是告訴瀏覽器要導入一個在外部的 css 檔案，透過 href 導入名為 this_page.css 的樣式檔案-->
+  </head>
+  <body>
+    <!-- nav區域 ======================================================================================== -->
+    <nav>
+      <div id="showMenu"><i class="fa fa-bars" aria-hidden="true"></i> menu</div>
+      <div>
+        <a href="javascript:;">關於TS堤偲園</a>
+        <a href="javascript:;">基本介紹</a>
+        <a href="javascript:;">精華介紹</a>
+        <a href="javascript:;">另類介紹</a>
+        <a href="javascript:;">影片介紹</a>
+      </div>
+      <!--javascript:是一個血死得空標籤-->
+      <!--a 是一個tag,href是a其中的一個屬性-->
+    </nav>
+
+    <!-- header區域 ===================================================================================== -->
+    <header>
+      <audio controls>
+        <source src="media/Loop.mp3" type="audio/mpeg">
+      </audio>
+    </header>
+
+
+    
+
+
+
+    <!-- section.page1區域 ============================================================================== -->
+    <section class="page page1">
+      <h1><i class="fa fa-home fa-2x" aria-hidden="true"></i> 關於TS堤偲園<span>[先修]</span></h1>
+
+      <article>
+        <img src="images/photo/icon11.png" alt="">
+        <h2>HTML5</h2>
+        <p>HTML5是HTML最新的修訂版本，2014年10月由全球資訊網協會（W3C）完成標準制定。目標是取代1999年所製定的HTML 4.01和XHTML 1.0標準，以期能在網際網路應用迅速發展的時候，使網路標準達到符合當代的網路需求。廣義論及HTML5時，實際指的是包括HTML、CSS和JavaScript在內的一套技術組合。<br>
+          參考說明：<a class="testWrap" href="https://zh.wikipedia.org/wiki/HTML" target="_blank">https://zh.wikipedia.org/wiki/HTML</a></p>
+      </article>
+
+      <article>
+        <img src="images/photo/icon12.png" alt="">
+        <h2>CSS3</h2>
+        <p>層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），又稱串樣式清單、級聯樣式表、串接樣式表、層疊樣式表、階層式樣式表，一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。目前最新版本是CSS2.1，為W3C的推薦標準。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發過程中。<br>
+          參考說明：<a href="https://zh.wikipedia.org/wiki/css" target="_blank">https://zh.wikipedia.org/wiki/css</a></p>
+      </article>
+
+    </section>
+
+    <!-- section.page2區域 =============================================================================== -->
+    <section class="page page2">. <!-- fa-heartbeat fa-2x fa-lg 是一個icon-->
+      <h1><i class="fa fa-heartbeat fa-2x fa-lg" aria-hidden="true"></i> 基本介紹</h1>
+
+      <div class="container">
+        <figure>
+          <a href="http://www.w3schools.com/html/default.asp" target="_blank">
+            <img src="images/photo/c12.jpg" alt=""></a>
+          <figcaption>HTML Tutorial 教程<br>(英文版)</figcaption>
+        </figure>
+
+        <!--figcaption 是figure的標題-->
+
+        <figure>
+          <a href="http://www.w3schools.com/tags/default.asp" target="_blank">
+            <img src="images/photo/c13.jpg" alt=""></a>
+          <figcaption>HTML 標籤依字母排序<br>(英文版)</figcaption>
+        </figure>
+
+        <figure>
+          <a href="http://www.runoob.com/html/html-tutorial.html" target="_blank">
+            <img src="images/photo/c14.jpg" alt=""></a>
+          <figcaption>HTML Tutorial 基礎學習教程<br>(簡體中文)</figcaption>
+        </figure>
+
+        <figure>
+          <a href="http://www.runoob.com/tags/html-reference.html" target="_blank">
+            <img src="images/photo/c15.jpg" alt=""></a>
+          <figcaption>HTML 標籤依字母排序<br>(簡體中文)</figcaption>
+        </figure>
+
+        <figure>
+          <a href="http://www.w3schools.com/css/default.asp" target="_blank">
+            <img src="images/photo/c2.jpg" alt=""></a>
+          <figcaption>CSS Tutorial 教程<br>(英文版)</figcaption>
+        </figure>
+
+        <figure>
+          <a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">
+            <img src="images/photo/c3.jpg" alt=""></a>
+          <figcaption>CSS 選取器&amp;屬性介紹<br>(英文版)</figcaption>
+        </figure>
+
+        <figure>
+          <a href="http://www.runoob.com/css3/css3-tutorial.html" target="_blank">
+            <img src="images/photo/c4.jpg" alt=""></a>
+          <figcaption>CSS3 Tutorial 教程<br>(簡體中文)</figcaption>
+        </figure>
+
+        <figure>
+          <a href="http://www.runoob.com/cssref/css-selectors.html" target="_blank">
+            <img src="images/photo/c5.jpg" alt=""></a>
+          <figcaption>CSS 選取器&amp;屬性介紹<br>(簡體中文)</figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <!-- section.page3區域 =============================================================================== -->
+    <section class="page page3">
+      <h1><i class="fa fa-star fa-spin" aria-hidden="true"></i> 精華介紹</h1>
+
+      <ul>
+        <li><h2>HTML</h2></li>
+        <li>新標籤組織頁面架構</li>
+        <li>header、footer</li>
+        <li>section、nav</li>
+        <li>article、figure<br>...............</li>
+        <li class="fa fa-pencil fa-4x"></li> 
+      </ul>
+
+      <ul>
+        <li><h2>CSS</h2></li>
+        <li>基本樣式讓排版有規律</li>
+        <li>新屬性讓排版有特色</li>
+        <li>圓角、陰影、背景控制</li>
+        <li>傾斜、旋轉、顏色漸變<br>...............</li>
+        <li class="fa fa-pencil fa-4x"></li> 
+      </ul>
+        <!--fa-4x把icon變大-->
+        <!--i class="fa fa-star fa-spin">插入一個icon-->
+      <ul>
+        <li><h2>RWD</h2></li>
+        <li>符合多媒體輸出設備呈現最適當的視覺結果</li>
+        <li>多檔案間的媒體查詢</li>
+        <li>同檔案中的媒體查詢<br>...............</li>
+        <li class="fa fa-pencil fa-4x"></li> 
+      </ul>
+
+    </section>
+
+    <!-- section.page4區域 =============================================================================== -->
+    <section class="page page4">
+      <h1><i class="fa fa-spinner fa-pulse" aria-hidden="true"></i> 另類介紹</h1>
+
+      <figure><img src="images/flower/f1.jpg" width="500" height="500" alt=""/>
+        <a href="test/test001.html" target="_blank">滿版背景<br>等比縮放問題</a></figure>
+
+      <figure><img src="images/flower/f2.jpg" width="500" height="500" alt=""/>
+        <a href="test/test002.html" target="_blank">多重背景<br>背景定位問題</a></figure>
+
+      <figure><img src="images/flower/f3.jpg" width="500" height="500" alt=""/>
+        <a href="test/test003.html" target="_blank">橫幅背景<br>設計問題</a></figure>
+
+      <figure><img src="images/flower/f4.jpg" width="500" height="500" alt=""/>
+        <a href="test/test004.html" target="_blank">邊框寬度與<br>邊框背景設計</a></figure>
+
+      <figure><img src="images/flower/f5.jpg" width="500" height="500" alt=""/>
+        <a href="http://www.css3maker.com/" target="_blank">CSS3好工具<br>CSS3 Maker</a></figure>
+
+      <figure><img src="images/flower/f6.jpg" width="500" height="500" alt=""/>
+        <a href="http://css3.mikeplate.com/" target="_blank">CSS3好工具<br>mikeplate</a></figure>
+
+      <figure><img src="images/flower/f7.jpg" width="500" height="500" alt=""/>
+        <a href="http://www.colorzilla.com/gradient-editor/" target="_blank">CSS3好工具<br>CSS3漸層工具</a></figure>
+
+      <figure><img src="images/flower/f8.jpg" width="500" height="500" alt=""/>
+        <a href="http://css3button.net/" target="_blank">CSS3好工具<br>Button設計</a></figure>
+
+      <figure><img src="images/flower/f9.jpg" width="500" height="500" alt=""/>
+        <a href="http://csswarp.eleqtriq.com/" target="_blank">CSS3好工具<br>曲線文字設計</a></figure>
+
+      <figure><img src="images/flower/f10.jpg" width="500" height="500" alt=""/>
+        <a href="http://www.yyyweb.com/" target="_blank">只是參考<span style="font-size:12px; display:block;">no licence</span>Web開發參考</a></figure><!--display設為block成為區塊的呈現方式，強迫換成兩行-->
+                                                <!--inline則是會呈現在同一行-->
+      <figure><img src="images/flower/f11.jpg" width="500" height="500" alt=""/>
+        <a href="http://isux.tencent.com/css3/" target="_blank">CSS 3.0<br>動畫參考手冊</a></figure>
+
+      <figure><img src="images/flower/f12.jpg" width="500" height="500" alt=""/>
+        <a href="http://isux.tencent.com/css3/tools.html" target="_blank">CSS 3.0<br>動畫參考工具</a></figure>
+
+      <figure><img src="images/flower/f13.jpg" width="500" height="500" alt=""/>
+        <a href="http://www.runoob.com/html/html5-new-element.html" target="_blank">HTML5<br>新多媒体元素</a></figure>
+    </section>
+
+    <!-- section.mediaArea區域 =========================================================================== -->
+    <section class="mediaArea">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/6AlzUeJ9zn0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </section>
+
+    <!-- footer區域 ======================================================================================= -->
+    <footer>
+      Copyright © 2015 TSweb | 建議使用 Chrome 瀏覽器 | Maintain by TSuiling
+    </footer>
+
+    <!-- aside區域 ======================================================================================= -->
+    <aside>
+      <a href="javascript:;"><img src="images/photo/icon1.png"></a>
+      <a href="javascript:;"><img src="images/photo/icon2.png"></a>
+      <a href="javascript:;"><img src="images/photo/icon3.png"></a>
+      <a href="javascript:;"><img src="images/photo/icon4.png"></a>
+      <a href="javascript:;"><img src="images/photo/icon5.png"></a>
+      <a href="javascript:;"><img src="images/photo/icon6.png"></a>
+    </aside>
+
+    <div id="goTop"><i class="fa fa-home fa-4x" aria-hidden="true"></i></div>
+
+  </body>
+</html>

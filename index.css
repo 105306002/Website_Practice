@@ -1,0 +1,270 @@
+
+
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+/* font-family: 'cwTeXHei', sans-serif; 中文黑體 */
+@import url('https://fonts.googleapis.com/css?family=Lobster|Righteous');
+/* font-family: 'Lobster', cursive; 英文草寫體 */
+/* font-family: 'Righteous', cursive; 英文方正體 */
+/* font-family: 'Lobster', 'cwTeXHei', sans-serif;  英文草寫體中文黑體  */
+
+/* CSS Reset or Default or All ================================================================== */
+* { padding: 0; margin: 0; }
+
+body { background-color: #c6d0eb; color: #000; font-size: 15px; letter-spacing: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, STHeiti, "Microsoft JhengHei", 微軟正黑體, sans-serif; }
+
+a { text-decoration: none; color: #4f90f7; font-family: 'Righteous', cursive; }
+a:hover { color: #a864e3; }
+
+ul,ol,li { list-style: none; }
+
+/* nav導覽列區域 =================================================================================== */
+nav { height: 60px; position: relative; }
+nav div { position: absolute; right: 0; bottom: 0; }
+
+nav div a { color: #FFF; padding: 7px 15px; margin-top: 10px; /*display: inline-block;*/ 
+  display: block; float: left; margin-right: 5px; 
+  -o-transition: all 0.2s; -moz-transition: all 0.2s; -webkit-transition: all 0.2s; transition: all 0.2s;
+  font-family: 'Lobster', 'cwTeXHei', sans-serif; font-size: 16px;
+  border-top-left-radius: 7px; border-top-right-radius: 7px; text-shadow: -2px -2px 2px #000; }
+/*區塊內的第一個子元素的 margin-top 會失效，會被上層的爸爸給搶走，簡單的說，我們這個範例中的 <h2> 文字所設定的
+ margin-top:25px; 會被 <div> 給搶走了，所以 <h2> 文字本身的上間距沒有了，反而是每個 <div> 都多了上間距…..
+ 寫 CSS 果然是咱們網頁設計師鍛練 EQ 的好朋友！
+
+隔天，依然不死心，再召喚 阿茂老師來討論，後來阿茂老師說，
+除了第一個子元素的 margin-top 失效會被上層的爸爸 <div> 給搶走之外，
+還會發生另一個問題，那就是如果 上層的 <div> 本身也有寫 margin-top 的時候，
+當 <div> 的 margin-top 比下面的第一個子元素 <h2> 的 margin-top 還大的時候，
+這時 <div> 就會以自己的 margin-top 來呈現上間距，但是 子元素 <h2> 的 margin-top 
+還是會失效被爸層搶走，照搶了不誤，但是不會呈現出來，而當 <div> 的 margin-top 
+比下面的第一個子元素 <h2> 的 margin-top 還小的時候，這時 <div> 就會以搶來的子元素 
+<h2> 的 margin-top 來呈現上間距*/
+
+/*CSS transitions 是可以用來調整 CSS animation 變動的速度,
+透過 CSS transitions 來控制轉變的時間及變化曲線。*/
+
+
+nav div a {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b456b7+0,cf85d3+8,993a91+33,592855+94 */
+  background: #524f9d; /* Old browsers */ /* FF3.6-15 */
+  background: -o-linear-gradient(top,  #504d91 0%,#c9c7eb 8%,#504d91 33%,#232150 90%); /* Chrome10-25,Safari5.1-6 */
+  background: -moz-linear-gradient(top,  #504d91 0%,#c9c7eb 8%,#504d91 33%,#232150 90%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top,  #504d91 0%,#c9c7eb 8%,#504d91 33%,#232150 90%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #504d91 0%,#c9c7eb 8%,#504d91 33%,#232150 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b456b7', endColorstr='#592855',GradientType=0 ); /* IE6-9 */
+}  /*按鈕呈現漸層顏色*/
+/*渐变轴为45度，从蓝色渐变到红色 
+linear-gradient(45deg, blue, red);
+
+/* 从右下到左上、从蓝色渐变到红色 
+linear-gradient(to left top, blue, red);
+
+/* 从下到上，从蓝色开始渐变、到高度40%位置是绿色渐变开始、最后以红色结束 
+linear-gradient(0deg, blue, green 40%, red);*/
+
+/*如果要把list type的預設前面圓圈圈或方形拿掉，也要加上padding margin：0因為list的預設有padding margin*/
+
+/*border-collapse property sets whether the table borders should be collapsed into a single border:
+border-collapse-collapse就是把框線原本是兩條線變成一條線*/
+
+/* position: fixed; is positioned relative to the viewport*/
+/*position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+*/
+
+/*However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.*/
+
+nav div a:hover { color:#FFF; text-shadow: 4px 4px 4px #000; padding-bottom: 17px; margin-top: 0 ; }
+
+#showMenu { display: none; }
+
+@media(max-width:600px){
+  #showMenu { display: inline-block; cursor: pointer; color: #FFF; padding: 10px;
+    font-family: 'Righteous', 'cwTeXHei', sans-serif; font-size: 20px; }
+  nav { height: auto; background-color: #000; }
+  nav div { position: static; padding: 0 20px; text-align: center; /*display: none;*/ }
+  nav div a { float: none; background: transparent; border-bottom:1px dotted #fff; padding: 10px 0 5px; margin: 0; }
+  nav div a:hover { padding: 10px 0 5px; margin: 0; }
+}
+
+/* header頁首區域 ================================================================================= */
+header { height: 200px; 
+  /*background-image: url(images/layout/header002.jpg); 
+  background-repeat:  no-repeat;
+  background-color: #23204f; 
+  background-position: center top; */
+  background: url(/Users/jennielin/Documents/images/layout/header002.jpg) no-repeat #23204f center top; }
+
+@media(max-width:1200px){
+  header { background-position: left top; }
+}
+
+/* section區-所有.page相同的設定 ==================================================================== */
+.page { min-height: 200px; background: url(/Users/jennielin/Documents/images/layout/shadow1.png) no-repeat center bottom;
+  padding: 50px 7% 80px 7%; overflow: hidden; }
+
+.page h1 { font-size: 2em; /*font-size 60px*/ font-weight: normal; 
+  font-family: 'Lobster', 'cwTeXHei', sans-serif; margin-bottom: 30px; }
+.page h1 span { font-size: 1.2rem; } /*font-size:1em;=>30px, 1rem=>16px */
+
+.page h1 .fa { color: #353079; }
+.page1 h1 .fa { font-size:   2em; }
+.page2 h1 .fa { font-size: 1.5em; 
+  -webkit-transform: rotate(-30deg); 
+  -moz-transform: rotate(-30deg); 
+  -ms-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  transform: rotate(-30deg); } 
+
+  /*為何rotate會動到網頁排版！？？？？？？？？？？？？？？？？？？？？？？？？*/     
+
+/* CSS屬性合併縮寫的方法
+padding: 四周;
+padding: 上下 左右;
+padding: 上 右 下 左;
+padding: 上 右左 下;
+*/
+
+/* section.page1區域 ========================================================================== */
+.page1 article { margin: 50px; }
+.page1 article img { float: left; }
+.page1 article h2 { padding-left: 120px; padding-bottom: 20px; }
+.page1 article p { padding-left: 120px; text-align: justify; line-height: 1.5em; } /*line-height也就是每行之間的距離*/
+
+.page1 .testWrap { display: inline-block; width: 150px; background: rgba(255, 255, 255, 0.5);
+  overflow: hidden; text-overflow: ellipsis; vertical-align: middle; transition: all 0.5s; }
+.page1 .testWrap:hover { width: 300px; }
+
+@media(min-width:1300px){
+  .page1 article { float: left; width: 44%; margin: 3%; }
+}
+@media(max-width:600px){
+  .page1 article { margin: 50px 0; text-align: center; }
+  .page1 article img { float: none; }
+  .page1 article h2 { padding: 20px 0; }
+  .page1 article p { padding-left: 0px; }
+}
+
+/* section.page2區域 ========================================================================== */
+.page2 .container { display: flex; flex-wrap: wrap; }/* flex 值會讓彈性容器變成塊級元素（block-level element）*/
+.page2 figure { float: left; width: 19%; padding: 2%; margin: 1%; position: relative;
+  background-color: rgba(255, 255, 255, 0.5);}
+.page2 figure img { width: 100%; height: auto; border-radius: 10px; box-shadow: -2px -2px 2px #000;
+  -o-transition: all 0.5s; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.page2 figure figcaption { text-align: center; padding-top: 10px; }
+
+.page2 figure img:hover { transform: scale(1.1,1.1); box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6); }
+/*scale(X方向上的比率，Y方向上的比率),  可以省略第二个值，省略时与第一个值相同*/
+
+.page2 figure::after { content: ''; background-image: url(images/layout/shadow3.png); 
+  background-size: contain; background-repeat: no-repeat;
+  position: absolute; left: 0; bottom:  -20px; width: 20%; height: 20px; }
+
+@media(max-width:800px){ .page2 figure { width: 40%; padding: 3%; margin: 2%; } }
+@media(max-width:400px){ .page2 figure { width: 80%; padding: 3%; margin: 3% auto; } }
+
+/* section.page3區域 ========================================================================== */
+.page3 { max-width: 1200px; }
+.page3 ul { float:left; width: 18%; margin: 1.5%; padding: 50px 7% 80px 5%; position: relative;
+  background-size: contain; background-repeat: no-repeat; }
+/*contain與cover正好相反，主要用於背景圖大於所在內容，但卻需要將背景圖完整呈現，此時就可採用contain的方式，使背景圖縮小至內容的大小。*/
+.page3 ul:nth-of-type(1) { background-image: url(images/photo/block1.png); }
+.page3 ul:nth-of-type(2) { background-image: url(images/photo/block2.png); }
+.page3 ul:nth-of-type(3) { background-image: url(images/photo/block4.png); }
+
+.page3 ul li:not(.fa) { font-size: 1rem; margin-bottom: 5px; /*transform: rotate(2deg);*/ }
+.page3 ul li h2 { font-size: 1.5em; padding-bottom: 5px; text-indent: 2rem; }
+/*CSS 屬性 text-indent 大致上來說可以有三種用法︰ (1) 讓首行縮排 、 (2) 讓首行凸出來 、 (3) 讓字變不見：*/
+.page3 ul li.fa { position: absolute; right: 30px; bottom: 20px; color: #FFF; }
+
+
+.page3 ul:hover { cursor: move;
+  animation-name: page3Ani; animation-duration: 1s; animation-iteration-count: infinite; }
+                            /*為了達到重複播放的目的animation-iteration-count: infinite*/
+@keyframes page3Ani{
+  0%   { transform: translate(  0px,   0px ); }
+  50%  { transform: translate( 10px, -10px ); }
+  100% {}
+}
+
+@media(max-width:1200px){ .page3 ul { width: 24%; margin: 1%; padding: 50px 7% 70px; } }       /*2欄*/
+@media(max-width: 900px){ .page3 ul { width: 34%; margin: 1%; padding: 50px 7% 70px; } }       /*2欄*/
+@media(max-width: 700px){ .page3 ul { width: 38%; margin: 1%; padding: 50px 18% 90px; 12% } }  /*2欄*/
+@media(max-width: 550px){ .page3 ul { width: 54%; margin: 1%; padding: 50px 13% 40px; } }      /*1欄*/
+@media(max-width: 400px){ .page3 ul { width: 78%; margin: 0%; padding: 50px 10% 60px 12%; } }  /*1欄*/
+
+/* section.page4區域 ========================================================================== */
+.page4 figure { float: left; width: 18%; margin: 1%; transition: all 0.5s;
+  border-radius: 50%; overflow: hidden; position: relative; }
+.page4 figure img { width: 100%; height: auto; display: block; }
+.page4 figure a { position: absolute; left: 0; top: 0; width: 100%; height: 100%; padding-top: 30%;
+  background-color: rgba(0, 0, 0, 0.7); color: #FFF; opacity: 0; box-sizing: border-box;
+  font-family: 'Righteous', 'cwTeXHei', sans-serif; font-size: 20px;
+  text-align: center; transition: all 4s; }
+
+.page4 figure:hover { transform: rotate(360deg) scale(1.4); z-index: 1; box-sizing: border-box;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.6); border: 5px solid #FFF; }
+.page4 figure a:hover { opacity: 1; }
+
+@media(min-width:1600px) {  .page4 figure { width: 14.5%; } } 
+@media(max-width:1200px) {  .page4 figure { width: 23%; }	  }
+@media(max-width: 900px) {  .page4 figure { width: 31.3%; } }
+@media(max-width: 600px) {  .page4 figure { width: 48%; }	  }
+@media(max-width: 400px) {  .page4 figure { float: none; width: 80%; margin: 20px auto; }	  }
+@media(max-width: 1024px){ .page4 figure a { opacity: 1; background-color: rgba(0,0,0,0.4);}  }
+                      /*opacity属性指定了一个元素的透明度,0opacity属性指定了一个元素后面的背景的被覆盖程度。*/
+                      /* 完全不透明 opacity: 1; opacity: 1.0;  半透明 opacity: 0.6; 完全透明 opacity: 0.0;
+                          opacity: 0;  */
+                       
+
+/* section.mediaArea區域 ========================================================================== */
+.mediaArea { min-height: 200px; }
+
+/* footer頁尾區域 ================================================================================== */
+footer { background-color: #23204f; color: #c6d0eb; padding: 15px; text-align: center; font-size: 13px; }
+
+
+/* aside區域 ====================================================================================== */
+aside { position: fixed; right: 0; top:50%; /*margin-top:-180px;*/ /*靠右垂直置中,固定不捲走*/
+  -webkit-transform: translate(0, -50%); 
+  -ms-transform: translate(0, -50%); 
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%); 
+  transform: translate(0, -50%); }
+
+aside a { display: block; background: rgba(255, 255, 255, 0.3); /*由上往下排列,半透明底色,左側有圓角*/ 
+  padding-right: 20px; right: -20px; position: relative; transition: all 0.3s;
+  animation: asideAni 0.5s 3; }
+
+aside a:nth-of-type(1) { animation-delay: 1.0s; }
+aside a:nth-of-type(2) { animation-delay: 1.3s; }
+aside a:nth-of-type(3) { animation-delay: 1.6s; }
+aside a:nth-of-type(4) { animation-delay: 1.9s; }
+aside a:nth-of-type(5) { animation-delay: 2.1s; }
+aside a:nth-of-type(6) { animation-delay: 2.4s; }
+
+aside a:first-child { border-top-left-radius: 10px; }
+aside a:last-child { border-bottom-left-radius: 10px; }
+aside a img { width: 60px; height: auto; } /*決定大小*/
+
+aside a:hover { right: 0; background: rgba(255, 255, 255, 0.7); 
+  border-top-left-radius: 10px; border-bottom-left-radius: 10px; box-shadow: 2px 2px 2px #000; }
+
+@keyframes asideAni {
+  0%   {}
+  50%  { right: 0; background: rgba(255, 255, 255, 0.7); box-shadow: 2px 2px 2px #000;
+    border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+  100% {}
+}
+
+#goTop { width: 200px; height: 200px; position: fixed; right: -100px; bottom: -100px; 
+  padding-top: 30px; padding-left: 30px; box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.3); color: #FFF; border-radius: 50%;
+  animation: goTopAni 5s infinite; }
+
+@keyframes goTopAni{
+  50%  { transform: scale(1.0); }/*保持原大小*/
+  55%  { transform: scale(1.1); }/*放大一點點*/
+  60%  { transform: scale(1.0); color: #FFF; }/*收回原大小*/
+  75%  { transform: scale(1.4); color:#99c5eb; }/*放大多一點*/
+  100% { transform: scale(1.0); color: #FFF; }/*收回原大小*/
+}
